@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <link rel="icon" type="image/x-icon" href="logo.ico.png">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Login</button>
+                <button type="button" class="toggle-btn" onclick="register()">Register</button>
+            </div>
+            <form id="login" class="input-group" method="post" onsubmit="handleLogin(event)">
+                <input type="email" id="login-email" name="email" class="input-fld" placeholder="Email Id" required>
+                <input type="password" id="login-pass" class="input-fld" placeholder="Enter Password" required>
+                <input type="checkbox" class="chk-box"><span>Remember Password</span>
+                <button type="submit" id="login-submit" class="submit-btn" disabled>Log in</button>
+            </form>
+            <form id="register" class="input-group" method="post" onsubmit="handleRegister(event)">
+                <input type="email" id="register-email" class="input-fld" placeholder="Email Id" required>
+                <input type="password" id="register-pass" class="input-fld" placeholder="Enter Password" required>
+                <input type="checkbox" class="chk-box"><span>I agree to terms & conditions.</span>
+                <button type="submit" id="register-submit" class="submit-btn" disabled>Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("btn");
+
+        function register() {
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+        }
+
+        function login() {
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0px";
+        }
+
+        function toggleButtonState(formId, buttonId) {
+            const form = document.getElementById(formId);
+            const button = document.getElementById(buttonId);
+
+            form.addEventListener('input', () => {
+                const allFieldsFilled = Array.from(form.querySelectorAll('input[type="email"], input[type="password"]')).every(input => input.value.trim() !== '');
+                button.disabled = !allFieldsFilled;
+            });
+        }
+
+        toggleButtonState('login', 'login-submit');
+        toggleButtonState('register', 'register-submit');
+
+        function handleLogin(event) {
+            event.preventDefault();
+            window.location.href = "home.html";
+        }
+
+        function handleRegister(event) {
+            event.preventDefault();
+            alert('Registration logic can go here.');
+        }
+    </script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAZe1Vvu28wF_ryZcM5AE9N9bzDae1ouJ8",
+            authDomain: "furry-care-f13b2.firebaseapp.com",
+            projectId: "furry-care-f13b2",
+            storageBucket: "furry-care-f13b2.appspot.com",
+            messagingSenderId: "105125338720",
+            appId: "1:105125338720:web:b3cc4a192868dd6314ed05"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+
+        const registerSubmit = document.getElementById("register-submit");
+
+        registerSubmit.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById("register-email").value;
+            const password = document.getElementById("register-pass").value;
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    alert('User created successfully!');
+                })
+                .catch((error) => {
+                    alert(error.message);
+                });
+        });
+    </script>
+</body>
+</html>

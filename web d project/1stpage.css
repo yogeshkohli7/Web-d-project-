@@ -1,0 +1,139 @@
+/* Root Variables for Colors */
+:root {
+    --primary-color: #748BAA;
+    --hover-color: #43566e;
+    --background-color: #9DB4C0;
+    --form-bg: #a5b6be;
+    --text-color: #333333;
+  }
+  
+  /* Global Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styling */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Navbar Styling */
+  .navbar {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .navbar .logo {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .navbar .nav {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .navbar .nav li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .navbar .nav li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Form Container Styling */
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    margin-top: 70px; /* To avoid navbar overlap */
+  }
+  
+  .form-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #425369;
+  }
+  
+  .form-box {
+    background-color: var(--form-bg);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 400px;
+  }
+  
+  .form-box h2 {
+    text-align: center;
+    color:#425369;
+    margin-bottom: 20px;
+  }
+  
+  /* Form Styling */
+  form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  form input,
+  form textarea,
+  form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  form textarea {
+    resize: none;
+  }
+  .btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05); /* Slight zoom effect for interactivity */
+  }
+  
+  

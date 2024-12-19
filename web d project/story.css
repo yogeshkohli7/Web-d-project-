@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap'); /* For Lora */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #9DB4C0;
+    color: black;
+    font-size: 15px;
+    line-height: 1.5;
+}
+ul{
+    list-style-type: none;
+}
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto 0 auto;
+}
+.available {
+    text-align: center;
+    margin: 20px;
+    color: #425d81;
+}
+.navbar{
+    background: #748cab;
+    color: #000814;
+    height: 40px;
+    margin-bottom: 30px;
+}
+.navbar .logo{
+    font-size: x-large;
+    font-weight: bold;
+}
+.navbar a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+.navbar a:hover{
+    color: rgb(0, 0, 0);
+}
+.navbar .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+}
+.navbar ul{
+    display: flex;
+
+}
+.navbar ul li{
+    margin-left: 20px;
+}
+
+.furr {
+    margin-bottom: 20px;
+    height: 350px;
+    width: 100%;
+    background: url(../images/dog1.webp) no-repeat center center/cover;
+    border-radius: 10px;
+    box-shadow: -9px 11px 19px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -9px 11px 19px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -9px 11px 19px 0px rgba(0,0,0,0.75);
+    transition: filter 0.3s ease-in-out; /* Smooth transition for brightness */
+}
+
+.furr:hover {
+    filter: brightness(80%); /* Dims the image to 50% of its original brightness */
+}
+
+.furr .content {
+    width: 40%;
+    padding: 50px 0 0 30px;
+}
+
+.furr p,
+.carbon p {
+    margin: 10px 0 20px;
+    font-family: 'Lora', serif;
+}
+.furr2{
+    margin-bottom: 20px;
+    height: 350px;
+    width: 100%;
+    background: url(../images/dog5.jpg) no-repeat center center/cover;
+    border-radius: 10px;
+    box-shadow: -9px 11px 19px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -9px 11px 19px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -9px 11px 19px 0px rgba(0,0,0,0.75);
+    transition: filter 0.3s ease-in-out; /* Smooth transition for brightness */
+}
+
+.furr2:hover {
+    filter: brightness(80%); /* Dims the image to 50% of its original brightness */
+}
+
+.furr2 .content {
+    width: 40%;
+    padding: 50px 0 0 30px;
+}
+
+.furr2 p,
+.carbon p {
+    margin: 10px 0 20px;
+    font-family: 'Lora', serif;
+}
+
